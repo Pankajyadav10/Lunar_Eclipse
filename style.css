@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffe4d6;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: cloud 10s ease infinite;
+}
+
+@keyframes cloud{
+    0%{
+        background-color: #2cc2f0b5;
+    }
+    25%{
+        background-color: #188cac;
+    }
+    50%{
+        background-color: #000;
+    }
+    75%{
+        background-color:#2997bf;
+    }
+    100%{
+        background-color: #23709eb5;
+    }
+}
+
+.universe{
+    width: 40vw;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background-color: #ffbb5e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: skychange 10s ease infinite;
+}
+
+@keyframes skychange{
+    0%{
+        background-color: #ffbb5cb5;
+    }
+    25%{
+        background-color: #fcbf49;
+    }
+    50%{
+        background-color: #000;
+    }
+    75%{
+        background-color:#fcbf49;
+    }
+    100%{
+        background-color: #ffbb5cb5;
+    }
+}
+
+.sun{
+    width: 20vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #e25e3e;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        aspect-ratio: 1;
+        border-radius: inherit;
+        background-color: #000;
+        animation: moonwalk 10s ease-in-out infinite;
+    }
+}
+
+@keyframes moonwalk {
+    0%{
+        translate: 100%;
+        scale: 1;
+    }
+    50%{
+        translate: 0%;
+        scale: 0.95;
+        box-shadow:rgba(255, 255, 255, 0.5) opx 48px 100px 0px;
+    }
+    100%{
+        translate: -1000%;
+        scale: 0.9;
+    }
+    
+}
